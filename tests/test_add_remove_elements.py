@@ -1,4 +1,3 @@
-import pytest
 from selenium.webdriver.common.by import By
 
 test_url = "https://the-internet.herokuapp.com/add_remove_elements/"
