@@ -22,3 +22,23 @@ def test_if_buttons_are_clickable(driver):
             assert not checkbox.is_selected(), f"Checkbox at {index} is not clickable"
         else:
             assert checkbox.is_selected(), "Checkbox at {index} is not clickable"
+
+
+def test_if_both_buttons_can_be_selected(driver):
+    driver.get(test_url)
+    checkboxes = driver.find_elements(By.XPATH, "//input[@type='checkbox']")
+    for checkbox in checkboxes:
+        if not checkbox.is_selected():
+            checkbox.click()
+    for checkbox in checkboxes:
+        assert checkbox.is_selected()
+
+
+def test_if_both_buttons_can_be_not_selected(driver):
+    driver.get(test_url)
+    checkboxes = driver.find_elements(By.XPATH, "//input[@type='checkbox']")
+    for checkbox in checkboxes:
+        if checkbox.is_selected():
+            checkbox.click()
+    for checkbox in checkboxes:
+        assert not checkbox.is_selected()
