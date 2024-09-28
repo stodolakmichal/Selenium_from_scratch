@@ -5,7 +5,7 @@ from selenium import webdriver
 @pytest.fixture()
 def driver():
     options = webdriver.ChromeOptions()
-    options.add_argument("--headless=new")
+    #options.add_argument("--headless=new")
     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(10)
     yield driver
