@@ -9,4 +9,3 @@ def driver():
     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(10)
     yield driver
-
